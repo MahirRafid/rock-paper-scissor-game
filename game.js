@@ -54,30 +54,20 @@ function playRound(userChoice, computerChoice) {
   }
 }
 
-function game() {
-  let userScr = 0,
-    cmpScr = 0;
-  let rock = document.querySelector(".rock");
-  let paper = document.querySelector(".paper");
-  let scissors = document.querySelector(".scissor");
+let userScr = 0,
+  cmpScr = 0;
 
-  rock.addEventListener("click", () => {
-    let ans = playRound("rock", getComputerChoice());
-    if (ans == "win") userScr++;
-    else if (ans == "lose") cmpScr++;
-  });
-
-  paper.addEventListener("click", () => {
-    let ans = playRound("rock", getComputerChoice());
-    if (ans == "win") userScr++;
-    else if (ans == "lose") cmpScr++;
-  });
-
-  scissors.addEventListener("click", () => {
-    let ans = playRound("rock", getComputerChoice());
-    if (ans == "win") userScr++;
-    else if (ans == "lose") cmpScr++;
-  });
+function updateScore() {
+  let ans = playRound("rock", getComputerChoice());
+  let userScrBtn = document.querySelector(".userScr");
+  let cmpScrBtn = document.querySelector(".cmpScr");
+  if (ans == "win") {
+    userScr++;
+    userScrBtn.textContent = `${userScr}`;
+  } else if (ans == "lose") {
+    cmpScr++;
+    cmpScrBtn.textContent = `${cmpScr}`;
+  }
 
   if (userScr == 5) {
     alert("WOHOO!! YOU WON!!!");
@@ -86,6 +76,16 @@ function game() {
     alert("SORRY! YOU LOST :(");
     return;
   }
+}
+
+function game() {
+  let rock = document.querySelector(".rock");
+  let paper = document.querySelector(".paper");
+  let scissors = document.querySelector(".scissor");
+
+  rock.addEventListener("click", updateScore);
+  paper.addEventListener("click", updateScore);
+  scissors.addEventListener("click", updateScore);
 }
 
 game();
