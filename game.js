@@ -77,7 +77,7 @@ function playRound(userChoice, computerChoice) {
 let userScr = 0,
   cmpScr = 0;
 
-function updateScore() {
+function updateScoreRock() {
   let userScrBtn = document.querySelector(".userScr");
   let cmpScrBtn = document.querySelector(".cmpScr");
   let ans = playRound("rock", getComputerChoice());
@@ -90,11 +90,47 @@ function updateScore() {
   }
 
   if (userScr == 5) {
-    alert("WOHOO!! YOU WON!!!");
-    return;
+    console.log("WOHOO!! YOU WON!!! :)");
   } else if (cmpScr == 5) {
-    alert("SORRY! YOU LOST :(");
-    return;
+    console.log("SORRY! YOU LOSE :(");
+  }
+}
+
+function updateScorePaper() {
+  let userScrBtn = document.querySelector(".userScr");
+  let cmpScrBtn = document.querySelector(".cmpScr");
+  let ans = playRound("Paper", getComputerChoice());
+  if (ans == "win") {
+    ++userScr;
+    userScrBtn.textContent = `${userScr}`;
+  } else if (ans == "lose") {
+    ++cmpScr;
+    cmpScrBtn.textContent = `${cmpScr}`;
+  }
+
+  if (userScr == 5) {
+    console.log("WOHOO!! YOU WON!!! :)");
+  } else if (cmpScr == 5) {
+    console.log("SORRY! YOU LOSE :(");
+  }
+}
+
+function updateScoreScissors() {
+  let userScrBtn = document.querySelector(".userScr");
+  let cmpScrBtn = document.querySelector(".cmpScr");
+  let ans = playRound("scissors", getComputerChoice());
+  if (ans == "win") {
+    ++userScr;
+    userScrBtn.textContent = `${userScr}`;
+  } else if (ans == "lose") {
+    ++cmpScr;
+    cmpScrBtn.textContent = `${cmpScr}`;
+  }
+
+  if (userScr == 5) {
+    console.log("WOHOO!! YOU WON!!! :)");
+  } else if (cmpScr == 5) {
+    console.log("SORRY! YOU LOSE :(");
   }
 }
 
@@ -103,9 +139,9 @@ function game() {
   let paper = document.querySelector(".paper");
   let scissors = document.querySelector(".scissor");
 
-  rock.addEventListener("click", updateScore);
-  paper.addEventListener("click", updateScore);
-  scissors.addEventListener("click", updateScore);
+  rock.addEventListener("click", updateScoreRock);
+  paper.addEventListener("click", updateScorePaper);
+  scissors.addEventListener("click", updateScoreScissors);
 }
 
 game();
