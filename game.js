@@ -1,3 +1,7 @@
+let copyRight = document.querySelector(".copyright");
+let d = new Date();
+copyRight.innerHTML = `<p>Copyright © Mahir Mosleh ${d.getFullYear()}</p>`;
+
 function getComputerChoice() {
   let a = Math.floor(Math.random() * 3 + 1);
   if (a == 1) return "ROCK";
@@ -94,7 +98,7 @@ function updateScoreRock() {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
     winModal.innerHTML =
-      "<h2>WOHOO!! YOU WON!!! :)</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>WOHOO!! YOU WON!!! :)</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
@@ -102,7 +106,7 @@ function updateScoreRock() {
     let loseModal = document.createElement("div");
     let ask = document.createElement("div");
     loseModal.innerHTML =
-      "<h2>SORRY! YOU LOSE :(</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>SORRY! YOU LOSE :(</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
   }
@@ -124,14 +128,14 @@ function updateScorePaper() {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
     winModal.innerHTML =
-      "<h2>WOHOO!! YOU WON!!! :)</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>WOHOO!! YOU WON!!! :)</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
     let headModal = document.querySelector(".headModal");
     let loseModal = document.createElement("div");
     loseModal.innerHTML =
-      "<h2>SORRY! YOU LOSE :(</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>SORRY! YOU LOSE :(</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
   }
@@ -153,32 +157,17 @@ function updateScoreScissors() {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
     winModal.innerHTML =
-      "<h2>WOHOO!! YOU WON!!! :)</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>WOHOO!! YOU WON!!! :)</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
     let headModal = document.querySelector(".headModal");
     let loseModal = document.createElement("div");
     loseModal.innerHTML =
-      "<h2>SORRY! YOU LOSE :(</h2><button onClick='window.location.reload();'>Play Again</button>";
+      "<h2>SORRY! YOU LOSE :(</h2><button class='button' onClick='window.location.reload();'>Play Again</button>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
   }
-}
-
-function gameOver() {
-  let newGame = document.querySelector(".newGame");
-  newGame.innerHTML =
-    "<h4>Do you want to play again?</h4><button class='yes'>Yes</button><button class='no'>No</button>";
-  let yes = document.querySelector(".yes");
-  let no = document.querySelector(".no");
-
-  yes.addEventListener("click", () => {
-    userScr = 0;
-    cmpScr = 0;
-    isGameOver = 0;
-    isGameOver = 0;
-  });
 }
 
 function game() {

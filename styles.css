@@ -56,3 +56,23 @@ img {
   text-align: center;
   margin: 60px;
 }
+
+.button {
+  background-color: #ffcb2f;
+  border: none;
+  color: #1c1c1c;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.copyright {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
