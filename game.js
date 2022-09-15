@@ -93,15 +93,23 @@ function updateScoreRock() {
   if (userScr == 5) {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
-    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    winModal.innerHTML = "<h2>WOHOO!! YOU WON!!! :)</h2>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    headModal.appendChild(ask);
   } else if (cmpScr == 5) {
     let headModal = document.querySelector(".headModal");
     let loseModal = document.createElement("div");
-    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    loseModal.innerHTML = "<h2>SORRY! YOU LOSE :(</h2>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
+    headModal.appendChild(ask);
   }
 }
 
@@ -120,15 +128,23 @@ function updateScorePaper() {
   if (userScr == 5) {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
-    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    winModal.innerHTML = "<h2>WOHOO!! YOU WON!!! :)</h2>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
+    headModal.appendChild(ask);
   } else if (cmpScr == 5) {
     let headModal = document.querySelector(".headModal");
     let loseModal = document.createElement("div");
-    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    loseModal.innerHTML = "<h2>SORRY! YOU LOSE :(</h2>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
+    headModal.appendChild(ask);
   }
 }
 
@@ -147,15 +163,23 @@ function updateScoreScissors() {
   if (userScr == 5) {
     let headModal = document.querySelector(".headModal");
     let winModal = document.createElement("div");
-    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    winModal.innerHTML = "<h2>WOHOO!! YOU WON!!! :)</h2>";
     winModal.classList.add("modal");
     headModal.parentNode.replaceChild(winModal, headModal);
+    headModal.appendChild(ask);
   } else if (cmpScr == 5) {
     let headModal = document.querySelector(".headModal");
     let loseModal = document.createElement("div");
-    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    let ask = document.createElement("div");
+    ask.innerHTML =
+      "<h3>Do you want to play again?</h3><button class='yes'>Yes</button><button class='no'>No</button>";
+    loseModal.innerHTML = "<h2>SORRY! YOU LOSE :(</h2>";
     loseModal.classList.add("modal");
     headModal.parentNode.replaceChild(loseModal, headModal);
+    headModal.appendChild(ask);
   }
 }
 
