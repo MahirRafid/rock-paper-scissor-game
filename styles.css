@@ -51,3 +51,8 @@ img {
   border-radius: 10px;
   padding: 40px 15px;
 }
+
+.modal {
+  text-align: center;
+  margin: 60px;
+}

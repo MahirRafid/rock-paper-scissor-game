@@ -75,7 +75,8 @@ function playRound(userChoice, computerChoice) {
 }
 
 let userScr = 0,
-  cmpScr = 0;
+  cmpScr = 0,
+  isGameOver = 0;
 
 function updateScoreRock() {
   let userScrBtn = document.querySelector(".userScr");
@@ -90,9 +91,17 @@ function updateScoreRock() {
   }
 
   if (userScr == 5) {
-    console.log("WOHOO!! YOU WON!!! :)");
+    let headModal = document.querySelector(".headModal");
+    let winModal = document.createElement("div");
+    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    winModal.classList.add("modal");
+    headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
-    console.log("SORRY! YOU LOSE :(");
+    let headModal = document.querySelector(".headModal");
+    let loseModal = document.createElement("div");
+    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    loseModal.classList.add("modal");
+    headModal.parentNode.replaceChild(loseModal, headModal);
   }
 }
 
@@ -109,9 +118,17 @@ function updateScorePaper() {
   }
 
   if (userScr == 5) {
-    console.log("WOHOO!! YOU WON!!! :)");
+    let headModal = document.querySelector(".headModal");
+    let winModal = document.createElement("div");
+    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    winModal.classList.add("modal");
+    headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
-    console.log("SORRY! YOU LOSE :(");
+    let headModal = document.querySelector(".headModal");
+    let loseModal = document.createElement("div");
+    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    loseModal.classList.add("modal");
+    headModal.parentNode.replaceChild(loseModal, headModal);
   }
 }
 
@@ -128,10 +145,33 @@ function updateScoreScissors() {
   }
 
   if (userScr == 5) {
-    console.log("WOHOO!! YOU WON!!! :)");
+    let headModal = document.querySelector(".headModal");
+    let winModal = document.createElement("div");
+    winModal.innerHTML = "<h1>WOHOO!! YOU WON!!! :)</h1>";
+    winModal.classList.add("modal");
+    headModal.parentNode.replaceChild(winModal, headModal);
   } else if (cmpScr == 5) {
-    console.log("SORRY! YOU LOSE :(");
+    let headModal = document.querySelector(".headModal");
+    let loseModal = document.createElement("div");
+    loseModal.innerHTML = "<h1>SORRY! YOU LOSE :(</h1>";
+    loseModal.classList.add("modal");
+    headModal.parentNode.replaceChild(loseModal, headModal);
   }
+}
+
+function gameOver() {
+  let newGame = document.querySelector(".newGame");
+  newGame.innerHTML =
+    "<h4>Do you want to play again?</h4><button class='yes'>Yes</button><button class='no'>No</button>";
+  let yes = document.querySelector(".yes");
+  let no = document.querySelector(".no");
+
+  yes.addEventListener("click", () => {
+    userScr = 0;
+    cmpScr = 0;
+    isGameOver = 0;
+    isGameOver = 0;
+  });
 }
 
 function game() {
