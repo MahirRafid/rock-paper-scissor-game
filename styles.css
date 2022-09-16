@@ -1,7 +1,7 @@
 body {
+  font-family: "Ubuntu", sans-serif;
   background-color: black;
   color: white;
-  font-family: "Ubuntu", sans-serif;
   margin: 0px;
 }
 
@@ -94,4 +94,12 @@ img {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: red;
 }
